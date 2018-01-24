@@ -7,3 +7,13 @@ E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Debug\EntityFramework.x
 E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Debug\EntityFramework.SqlServer.xml
 E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\obj\Debug\Beautytrend.Entity.dll
 E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\obj\Debug\Beautytrend.Entity.pdb
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Debug\Newtonsoft.Json.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Debug\System.Net.Http.Formatting.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Debug\System.Web.Cors.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Debug\System.Web.Http.Cors.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Debug\System.Web.Http.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Debug\Newtonsoft.Json.xml
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Debug\System.Net.Http.Formatting.xml
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Debug\System.Web.Http.xml
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Debug\System.Web.Http.Cors.xml
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\obj\Debug\Beautytrend.Entity.csprojResolveAssemblyReference.cache

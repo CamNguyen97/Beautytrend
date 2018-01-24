@@ -14,7 +14,8 @@ namespace Beautytrend.Entity
     using System.Data.Entity.Infrastructure;
     
     public partial class ShopBeautytrendEntities : DbContext
-    {
+    {   
+        
         public ShopBeautytrendEntities()
             : base("name=ShopBeautytrendEntities")
         {

@@ -70,3 +70,8 @@ E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Tests\bin\Debug\System.Web.Http.xm
 E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Tests\bin\Debug\System.Web.Http.Owin.xml
 E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Tests\bin\Debug\System.Net.Http.Formatting.xml
 E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Tests\bin\Debug\System.Web.Http.WebHost.xml
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Tests\bin\Debug\EntityFramework.SqlServer.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Tests\bin\Debug\System.Web.Cors.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Tests\bin\Debug\System.Web.Http.Cors.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Tests\bin\Debug\EntityFramework.SqlServer.xml
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Tests\bin\Debug\System.Web.Http.Cors.xml

@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+@section head{
+    
+<script src="~/Content/angular.min.js"></script>
+    }
+   
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Thông tin sản phẩm</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+    <table class="table table-striped" >
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Thể loại</th>
+                <th>Ảnh</th>
+                <th>Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody class="Table">
+        
+        </tbody>
+    </table>
+
+
+
+
+@section script{
+  <script>
+       $(document).ready(function () {
+           $.getJSON("http://localhost:8080/api/SanPham/GetAll", function (data) {
+               var html = "";
+               $.each(data, function (key, val) {
+                   html += "<tr><td>" + key++ + "</td> <td>" + val.TenSP + "</td><td>" + val.Gia + " đ</td> <td>" + val.TheLoai + "</td> <td>" + val.AnhSP + "</td> <td>" + val.status + "</td></tr>";
+               });
+               $(".Table").append(html);
+           });
+       });
+  </script>
+}  

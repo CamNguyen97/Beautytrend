@@ -82,3 +82,10 @@ E:\GitHub\Beautytrend\Beautytrend\Beautytrend\obj\Debug\Beautytrend.pdb
 E:\GitHub\Beautytrend\Beautytrend\Beautytrend\bin\Beautytrend.Entity.dll
 E:\GitHub\Beautytrend\Beautytrend\Beautytrend\bin\Beautytrend.Entity.pdb
 E:\GitHub\Beautytrend\Beautytrend\Beautytrend\obj\Debug\Beautytrend.csprojResolveAssemblyReference.cache
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend\bin\System.Net.Http.Formatting.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend\bin\System.Web.Cors.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend\bin\System.Web.Http.Cors.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend\bin\System.Web.Http.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend\bin\System.Net.Http.Formatting.xml
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend\bin\System.Web.Http.xml
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend\bin\System.Web.Http.Cors.xml

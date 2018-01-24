@@ -92,3 +92,6 @@ E:\GitHub\Beautytrend\Beautytrend\Beautytrend.API\bin\Beautytrend.Model.dll
 E:\GitHub\Beautytrend\Beautytrend\Beautytrend.API\bin\Beautytrend.Entity.pdb
 E:\GitHub\Beautytrend\Beautytrend\Beautytrend.API\bin\Beautytrend.Model.pdb
 E:\GitHub\Beautytrend\Beautytrend\Beautytrend.API\obj\Debug\Beautytrend.API.csprojResolveAssemblyReference.cache
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.API\bin\System.Web.Cors.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.API\bin\System.Web.Http.Cors.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.API\bin\System.Web.Http.Cors.xml
