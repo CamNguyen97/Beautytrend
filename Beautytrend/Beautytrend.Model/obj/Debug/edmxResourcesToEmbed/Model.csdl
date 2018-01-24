@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShopBeautytrendModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="HoaDonDat">
+    <Key>
+      <PropertyRef Name="MaHoaDon" />
+    </Key>
+    <Property Name="MaHoaDon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaNhanVien" Type="Int32" />
+    <Property Name="MaKH" Type="Int32" />
+    <Property Name="NguoiGui" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Int32" />
+    <Property Name="Gia" Type="Int32" />
+    <Property Name="ChuY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="user" Relationship="Self.FK_HoaDonDat_user" FromRole="HoaDonDat" ToRole="user" />
+    <NavigationProperty Name="UserAdmin" Relationship="Self.FK_HoaDonDat_UserAdmin" FromRole="HoaDonDat" ToRole="UserAdmin" />
+    <NavigationProperty Name="PhieuMuas" Relationship="Self.FK_PhieuMua_HoaDonDat" FromRole="HoaDonDat" ToRole="PhieuMua" />
+  </EntityType>
+  <EntityType Name="PhieuMua">
+    <Key>
+      <PropertyRef Name="MaPM" />
+    </Key>
+    <Property Name="MaPM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaHDD" Type="Int32" />
+    <Property Name="MaSP" Type="Int32" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="HoaDonDat" Relationship="Self.FK_PhieuMua_HoaDonDat" FromRole="PhieuMua" ToRole="HoaDonDat" />
+    <NavigationProperty Name="SanPham" Relationship="Self.FK_PhieuMua_SanPham" FromRole="PhieuMua" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MaLoai" Type="Int32" />
+    <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Gia" Type="Int32" />
+    <Property Name="AnhSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TenNguoiDung" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="PhieuMuas" Relationship="Self.FK_PhieuMua_SanPham" FromRole="SanPham" ToRole="PhieuMua" />
+    <NavigationProperty Name="TheLoai" Relationship="Self.FK_SanPham_TheLoai" FromRole="SanPham" ToRole="TheLoai" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TheLoai">
+    <Key>
+      <PropertyRef Name="MaTheLoai" />
+    </Key>
+    <Property Name="MaTheLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenTheloai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MaCha" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="SanPhams" Relationship="Self.FK_SanPham_TheLoai" FromRole="TheLoai" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="TinTuc">
+    <Key>
+      <PropertyRef Name="MaTinTuc" />
+    </Key>
+    <Property Name="MaTinTuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TieuDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Anh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="NgayDang" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="MaUser" Type="Int32" />
+    <NavigationProperty Name="UserAdmin" Relationship="Self.FK_TinTuc_UserAdmin" FromRole="TinTuc" ToRole="UserAdmin" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="passwd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="Int32" />
+    <Property Name="address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="lv" Type="Int32" />
+    <NavigationProperty Name="HoaDonDats" Relationship="Self.FK_HoaDonDat_user" FromRole="user" ToRole="HoaDonDat" />
+  </EntityType>
+  <EntityType Name="UserAdmin">
+    <Key>
+      <PropertyRef Name="MaUser" />
+    </Key>
+    <Property Name="MaUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="passwd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="Int32" />
+    <Property Name="address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="lv" Type="Int32" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="HoaDonDats" Relationship="Self.FK_HoaDonDat_UserAdmin" FromRole="UserAdmin" ToRole="HoaDonDat" />
+    <NavigationProperty Name="TinTucs" Relationship="Self.FK_TinTuc_UserAdmin" FromRole="UserAdmin" ToRole="TinTuc" />
+  </EntityType>
+  <Association Name="FK_HoaDonDat_user">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="HoaDonDat" Type="Self.HoaDonDat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="HoaDonDat">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDonDat_UserAdmin">
+    <End Role="UserAdmin" Type="Self.UserAdmin" Multiplicity="0..1" />
+    <End Role="HoaDonDat" Type="Self.HoaDonDat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAdmin">
+        <PropertyRef Name="MaUser" />
+      </Principal>
+      <Dependent Role="HoaDonDat">
+        <PropertyRef Name="MaNhanVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuMua_HoaDonDat">
+    <End Role="HoaDonDat" Type="Self.HoaDonDat" Multiplicity="0..1" />
+    <End Role="PhieuMua" Type="Self.PhieuMua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDonDat">
+        <PropertyRef Name="MaHoaDon" />
+      </Principal>
+      <Dependent Role="PhieuMua">
+        <PropertyRef Name="MaHDD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuMua_SanPham">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
+    <End Role="PhieuMua" Type="Self.PhieuMua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="PhieuMua">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_TheLoai">
+    <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="0..1" />
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheLoai">
+        <PropertyRef Name="MaTheLoai" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TinTuc_UserAdmin">
+    <End Role="UserAdmin" Type="Self.UserAdmin" Multiplicity="0..1" />
+    <End Role="TinTuc" Type="Self.TinTuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAdmin">
+        <PropertyRef Name="MaUser" />
+      </Principal>
+      <Dependent Role="TinTuc">
+        <PropertyRef Name="MaUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ShopBeautytrendEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HoaDonDats" EntityType="Self.HoaDonDat" />
+    <EntitySet Name="PhieuMuas" EntityType="Self.PhieuMua" />
+    <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TheLoais" EntityType="Self.TheLoai" />
+    <EntitySet Name="TinTucs" EntityType="Self.TinTuc" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="UserAdmins" EntityType="Self.UserAdmin" />
+    <AssociationSet Name="FK_HoaDonDat_user" Association="Self.FK_HoaDonDat_user">
+      <End Role="user" EntitySet="users" />
+      <End Role="HoaDonDat" EntitySet="HoaDonDats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonDat_UserAdmin" Association="Self.FK_HoaDonDat_UserAdmin">
+      <End Role="UserAdmin" EntitySet="UserAdmins" />
+      <End Role="HoaDonDat" EntitySet="HoaDonDats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuMua_HoaDonDat" Association="Self.FK_PhieuMua_HoaDonDat">
+      <End Role="HoaDonDat" EntitySet="HoaDonDats" />
+      <End Role="PhieuMua" EntitySet="PhieuMuas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuMua_SanPham" Association="Self.FK_PhieuMua_SanPham">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="PhieuMua" EntitySet="PhieuMuas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_TheLoai" Association="Self.FK_SanPham_TheLoai">
+      <End Role="TheLoai" EntitySet="TheLoais" />
+      <End Role="SanPham" EntitySet="SanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TinTuc_UserAdmin" Association="Self.FK_TinTuc_UserAdmin">
+      <End Role="UserAdmin" EntitySet="UserAdmins" />
+      <End Role="TinTuc" EntitySet="TinTucs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

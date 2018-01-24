@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5714ad7fc42e4d56b00a201cb5ed3830" Name="Diagram1">
+        <EntityTypeShape EntityType="ShopBeautytrendModel.HoaDonDat" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopBeautytrendModel.PhieuMua" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopBeautytrendModel.SanPham" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopBeautytrendModel.sysdiagram" Width="1.5" PointX="5.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopBeautytrendModel.TheLoai" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopBeautytrendModel.TinTuc" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopBeautytrendModel.user" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopBeautytrendModel.UserAdmin" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="ShopBeautytrendModel.FK_HoaDonDat_user" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopBeautytrendModel.FK_HoaDonDat_UserAdmin" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopBeautytrendModel.FK_PhieuMua_HoaDonDat" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopBeautytrendModel.FK_PhieuMua_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopBeautytrendModel.FK_SanPham_TheLoai" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopBeautytrendModel.FK_TinTuc_UserAdmin" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

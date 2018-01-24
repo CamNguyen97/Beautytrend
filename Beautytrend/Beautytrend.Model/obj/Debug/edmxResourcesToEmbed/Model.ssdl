@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShopBeautytrendModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="HoaDonDat">
+    <Key>
+      <PropertyRef Name="MaHoaDon" />
+    </Key>
+    <Property Name="MaHoaDon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaNhanVien" Type="int" />
+    <Property Name="MaKH" Type="int" />
+    <Property Name="NguoiGui" Type="nvarchar" MaxLength="100" />
+    <Property Name="TrangThai" Type="int" />
+    <Property Name="Gia" Type="int" />
+    <Property Name="ChuY" Type="nvarchar" MaxLength="500" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityType Name="PhieuMua">
+    <Key>
+      <PropertyRef Name="MaPM" />
+    </Key>
+    <Property Name="MaPM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaHDD" Type="int" />
+    <Property Name="MaSP" Type="int" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenSP" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaLoai" Type="int" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="500" />
+    <Property Name="Gia" Type="int" />
+    <Property Name="AnhSP" Type="nvarchar" MaxLength="100" />
+    <Property Name="TenNguoiDung" Type="int" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TheLoai">
+    <Key>
+      <PropertyRef Name="MaTheLoai" />
+    </Key>
+    <Property Name="MaTheLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTheloai" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaCha" Type="int" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityType Name="TinTuc">
+    <Key>
+      <PropertyRef Name="MaTinTuc" />
+    </Key>
+    <Property Name="MaTinTuc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="100" />
+    <Property Name="Anh" Type="nvarchar" MaxLength="100" />
+    <Property Name="NoiDung" Type="nvarchar" MaxLength="4000" />
+    <Property Name="NgayDang" Type="datetime" />
+    <Property Name="status" Type="int" />
+    <Property Name="MaUser" Type="int" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+    <Property Name="passwd" Type="nvarchar" MaxLength="100" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="phone" Type="int" />
+    <Property Name="address" Type="nvarchar" MaxLength="200" />
+    <Property Name="create_date" Type="datetime" />
+    <Property Name="status" Type="bit" />
+    <Property Name="lv" Type="int" />
+  </EntityType>
+  <EntityType Name="UserAdmin">
+    <Key>
+      <PropertyRef Name="MaUser" />
+    </Key>
+    <Property Name="MaUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="status" Type="bit" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+    <Property Name="passwd" Type="nvarchar" MaxLength="100" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="phone" Type="int" />
+    <Property Name="address" Type="nvarchar" MaxLength="200" />
+    <Property Name="lv" Type="int" />
+    <Property Name="create_date" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_HoaDonDat_user">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="HoaDonDat" Type="Self.HoaDonDat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="HoaDonDat">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDonDat_UserAdmin">
+    <End Role="UserAdmin" Type="Self.UserAdmin" Multiplicity="0..1" />
+    <End Role="HoaDonDat" Type="Self.HoaDonDat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAdmin">
+        <PropertyRef Name="MaUser" />
+      </Principal>
+      <Dependent Role="HoaDonDat">
+        <PropertyRef Name="MaNhanVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuMua_HoaDonDat">
+    <End Role="HoaDonDat" Type="Self.HoaDonDat" Multiplicity="0..1" />
+    <End Role="PhieuMua" Type="Self.PhieuMua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDonDat">
+        <PropertyRef Name="MaHoaDon" />
+      </Principal>
+      <Dependent Role="PhieuMua">
+        <PropertyRef Name="MaHDD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuMua_SanPham">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
+    <End Role="PhieuMua" Type="Self.PhieuMua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="PhieuMua">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_TheLoai">
+    <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="0..1" />
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheLoai">
+        <PropertyRef Name="MaTheLoai" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TinTuc_UserAdmin">
+    <End Role="UserAdmin" Type="Self.UserAdmin" Multiplicity="0..1" />
+    <End Role="TinTuc" Type="Self.TinTuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAdmin">
+        <PropertyRef Name="MaUser" />
+      </Principal>
+      <Dependent Role="TinTuc">
+        <PropertyRef Name="MaUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ShopBeautytrendModelStoreContainer">
+    <EntitySet Name="HoaDonDat" EntityType="Self.HoaDonDat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhieuMua" EntityType="Self.PhieuMua" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TheLoai" EntityType="Self.TheLoai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAdmin" EntityType="Self.UserAdmin" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_HoaDonDat_user" Association="Self.FK_HoaDonDat_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="HoaDonDat" EntitySet="HoaDonDat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonDat_UserAdmin" Association="Self.FK_HoaDonDat_UserAdmin">
+      <End Role="UserAdmin" EntitySet="UserAdmin" />
+      <End Role="HoaDonDat" EntitySet="HoaDonDat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuMua_HoaDonDat" Association="Self.FK_PhieuMua_HoaDonDat">
+      <End Role="HoaDonDat" EntitySet="HoaDonDat" />
+      <End Role="PhieuMua" EntitySet="PhieuMua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuMua_SanPham" Association="Self.FK_PhieuMua_SanPham">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="PhieuMua" EntitySet="PhieuMua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_TheLoai" Association="Self.FK_SanPham_TheLoai">
+      <End Role="TheLoai" EntitySet="TheLoai" />
+      <End Role="SanPham" EntitySet="SanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TinTuc_UserAdmin" Association="Self.FK_TinTuc_UserAdmin">
+      <End Role="UserAdmin" EntitySet="UserAdmin" />
+      <End Role="TinTuc" EntitySet="TinTuc" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

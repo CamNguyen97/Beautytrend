@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beautytrend", "Beautytrend\Beautytrend.csproj", "{FE476705-1159-43F9-9A9C-62DDF2B4EE63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beautytrend.Tests", "Beautytrend.Tests\Beautytrend.Tests.csproj", "{824B84E9-E8F5-4223-A85B-4804700B9279}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beautytrend.Model", "Beautytrend.Model\Beautytrend.Model.csproj", "{656B1CC1-B09D-47C6-A996-D28910B0FA10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beautytrend.Entity", "Beautytrend.Entity\Beautytrend.Entity.csproj", "{DE1F26B6-2192-4856-879F-E731584FC9EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beautytrend.API", "Beautytrend.API\Beautytrend.API.csproj", "{57A01DB1-77CB-43A2-AB9C-D16257A9DA05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE476705-1159-43F9-9A9C-62DDF2B4EE63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE476705-1159-43F9-9A9C-62DDF2B4EE63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE476705-1159-43F9-9A9C-62DDF2B4EE63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE476705-1159-43F9-9A9C-62DDF2B4EE63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{824B84E9-E8F5-4223-A85B-4804700B9279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{824B84E9-E8F5-4223-A85B-4804700B9279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{824B84E9-E8F5-4223-A85B-4804700B9279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{824B84E9-E8F5-4223-A85B-4804700B9279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{656B1CC1-B09D-47C6-A996-D28910B0FA10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{656B1CC1-B09D-47C6-A996-D28910B0FA10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{656B1CC1-B09D-47C6-A996-D28910B0FA10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{656B1CC1-B09D-47C6-A996-D28910B0FA10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE1F26B6-2192-4856-879F-E731584FC9EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE1F26B6-2192-4856-879F-E731584FC9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE1F26B6-2192-4856-879F-E731584FC9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE1F26B6-2192-4856-879F-E731584FC9EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57A01DB1-77CB-43A2-AB9C-D16257A9DA05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57A01DB1-77CB-43A2-AB9C-D16257A9DA05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57A01DB1-77CB-43A2-AB9C-D16257A9DA05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57A01DB1-77CB-43A2-AB9C-D16257A9DA05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

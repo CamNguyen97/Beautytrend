@@ -1,0 +1,10 @@
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Release\Beautytrend.Entity.dll.config
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Release\Beautytrend.Entity.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Release\Beautytrend.Entity.pdb
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Release\EntityFramework.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Release\EntityFramework.SqlServer.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Release\EntityFramework.xml
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\bin\Release\EntityFramework.SqlServer.xml
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\obj\Release\Beautytrend.Entity.csprojResolveAssemblyReference.cache
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\obj\Release\Beautytrend.Entity.dll
+E:\GitHub\Beautytrend\Beautytrend\Beautytrend.Entity\obj\Release\Beautytrend.Entity.pdb
